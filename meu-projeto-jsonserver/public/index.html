@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ONG focada no combate ao aquecimento global, promovendo ações sustentáveis and conscientização ambiental.">
+    <meta name="keywords" content="ONG, aquecimento global, meio ambiente, sustentabilidade, ensino sobre aqueciemto global">
+    <title>EarthFirst</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="Header" class="sticky-top">
+    <nav class="navbar navbar-dark bg-transparent px-md-5 shadow-sm" id="topo">        <div class="container-fluid p-0 d-flex justify-content-between align-items-center">
+            <a href="#" id="logo-link" class="d-flex align-items-center m-0 text-decoration-none">
+                <img src="img/logo.png" alt="EarthFirst Logo" id="logo-img">
+                <span id="logo-texto" class="ms-2">EarthFirst</span>
+            </a>
+            
+            <button class="btn text-white p-2 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuHamburguer" aria-controls="menuHamburguer" aria-expanded="false">
+                <i class="fas fa-bars fs-2"></i>
+            </button>
+        </div>
+        
+        <div class="collapse w-100" id="menuHamburguer">
+            <div class="d-flex flex-column align-items-center py-3 w-100" id="menu-layout-novo">                
+                <a href="#Sobre_Nossa_Missão" class="text-black py-2 text-decoration-none fs-5 nav-item-custom">Sobre Nossa Missão</a>
+                <a href="#Nossos_Projetos" class="text-black py-2 text-decoration-none fs-5 nav-item-custom">Nossos Projetos</a>
+                <a href="#Cadastro_ONG" class="text-black py-2 text-decoration-none fs-5 nav-item-custom">Junte-se a Nós</a>
+                <a href="#Entre_em_Contato" class="text-black py-2 text-decoration-none fs-5 nav-item-custom">Entre em Contato</a>
+                <a href="dashboard.html" class="text-black py-2 text-decoration-none fs-5 nav-item-custom">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section id="comeco" class="container-fluid">
+    <div class="container container-capa-conteudo">
+        <h1>Juntos Nós Podemos<br><span class="texto-gradiente-capa">Salvar o Planeta</span></h1>
+        <p id="h1_ajuda">Conectamos pessoas, ONGs e empresas em uma rede viva de reflorestamento, educação ambiental e preservação de ecossistemas.</p>
+        <p class="mt-4 text-white">Desenvolvido por: <strong>Nícolas De Almeida</strong> | Matrícula: <strong>1638671</strong><br>Trabalho Prático 1-DIW</p>
+        <a href="#Cadastro_ONG" id="junte">Junte-se a nós</a>
+    </div>
+</section>
+<main class="container-fluid px-md-5">
+
+    <section id="Projetos_Destaque" class="my-5">
+        <div id="carouselDestaques" class="container carousel slide shadow rounded mt-4" data-bs-ride="carousel">
+            <div class="carousel-inner" id="container-carrossel"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestaques" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselDestaques" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </section>
+
+    <section id="Sobre_Nossa_Missão" class="my-5 container">
+        <h2 class="mb-5">Sobre Nossa Missão 🎯</h2>
+        
+        <div class="missao-container">
+            <div class="Sobre1">
+                <div class="missao-header">
+                    <span class="missao-icone">🌿</span>
+                    <h3>Quem Somos</h3>
+                </div>
+                <p>A EarthFirst é uma organização sem fins lucrativos dedicada ao combate às mudanças climáticas e à promoção da sustentabilidade ambiental.</p>
+            </div>
+            
+            <div class="Sobre2">
+                <div class="missao-header">
+                    <span class="missao-icone">🎯</span>
+                    <h3>Nosso Objetivo</h3>
+                </div>
+                <p>Nossa missão é criar um futuro sustentável por meio de projetos de reflorestamento, programas de reciclagem e educação ambiental. Acreditamos que a ação coletiva e a conscientização são fundamentais para reverter os efeitos do aquecimento global.</p>
+            </div>
+            
+            <div class="Sobre3">
+                <div class="missao-header">
+                    <span class="missao-icone">🤝</span>
+                    <h3>Como Atuamos</h3>
+                </div>
+                <p>Com voluntários em todo o mundo e parcerias com organizações ambientais de destaque, estamos fazendo uma diferença real na luta contra as mudanças climáticas.</p>
+            </div>
+        </div>
+    </section>
+    <section id="Nossos_Projetos" class="my-5">
+        <h2>🚀 Nossos Projetos</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3 mx-0" id="container-projetos"></div>
+    </section>
+
+    <section id="Cadastro_ONG" class="my-5 container">
+        <h2 class="mb-5">Faça Parte da EarthFirst 🫵</h2>
+        
+        <div class="row align-items-center g-5 mt-2">
+            <div class="col-lg-5 text-start bloco-texto-cadastro">
+                <p class="texto-chamada">Juntos, podemos transformar a realidade do nosso planeta. Se você representa uma instituição ou quer atuar como voluntário individual, preencha o formulário ao lado.</p>
+                <p class="texto-chamada">Ao enviar seus dados, você garante acesso prioritário aos nossos projetos de reflorestamento, suporte para suas ações locais e uma rede ativa de agentes verdes por todo o país.</p>                      
+                <p class="texto-chamada-destaque"> Toda grande mudança começa com uma pequena atitude. Venha construir um futuro sustentável conosco!</p>
+            </div>
+            
+            <div class="col-lg-7">
+                <form id="Formulario_ONG">
+                    <div class="form-group-custom">
+                        <label>Nome da ONG / Voluntário</label>
+                        <input type="text" class="form-control" placeholder="Seu Nome ou da Instituição" required>
+                    </div>
+                    
+                    <div class="form-group-custom">
+                        <label>Email</label>
+                        <input type="email" class="form-control" placeholder="exemplo_email@gmail.com" required>
+                    </div>
+                    
+                    <div class="form-group-custom">
+                        <label>Telefone</label>
+                        <input type="tel" class="form-control" placeholder="(00) 00000-0000">
+                    </div>
+                    
+                    <div class="form-group-custom">
+                        <label>Área de atuação</label>
+                        <input type="text" class="form-control" placeholder="Ex: Reflorestamento, Educação ambiental">
+                    </div>
+                    
+                    <div class="form-group-custom">
+                        <label>Mensagem</label>
+                        <textarea class="form-control" placeholder="Fale um pouco sobre suas intenções..." rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit">Enviar Solicitação</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="text-center p-4">
+    <h2 style="color: white; text-decoration: none; margin-bottom: 20px;">💬 Conecte-se Conosco</h2>
+<section id="Entre_em_Contato" class="my-5 container">
+        <div id="Formulario">
+            <p class="text-white text-center fs-4 mb-5" style="opacity: 0.9;">Tem alguma dúvida, sugestão ou quer apoiar a EarthFirst? Envie uma mensagem direta para o nosso time administrativo.</p>
+            
+            <form>
+                <div class="form-group-custom mb-4">
+                    <label class="text-white opacity-75">Seu Nome</label>
+                    <input type="text" class="form-control" placeholder="Como podemos te chamar?" required>
+                </div>
+                
+                <div class="form-group-custom mb-4">
+                    <label class="text-white opacity-75">Seu E-mail</label>
+                    <input type="email" class="form-control" placeholder="seu-email@exemplo.com" required>
+                </div>
+                
+                <div class="form-group-custom mb-4">
+                    <label class="text-white opacity-75">Sua Mensagem</label>
+                    <textarea class="form-control" placeholder="Escreva aqui o que você precisa..." rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" id="Conectar">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+    <p class="mt-4 text-white">
+    <div class="siga-nos-container text-center py-4">
+        <h3 class="text-white mb-4">Siga-nos nas Redes Sociais</h3>
+        <div class="redes-sociais-icones">
+            <a href="#" target="_blank" class="icone-social instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" class="icone-social linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank" class="icone-social youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" target="_blank" class="icone-social facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
+    </p>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
