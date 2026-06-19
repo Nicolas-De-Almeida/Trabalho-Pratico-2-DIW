@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - EarthFirst</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<main class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div id="Formulario" class="shadow p-5 bg-white rounded-4" style="max-width: 800px; width: 100%; border: none;">
+        <div class="text-center mb-5">
+            <img src="assets/img/logo.png" alt="Logo" style="height: 90px; margin-bottom: 15px;">
+            <h2 style="color: rgb(46, 139, 87); font-size: 48px; text-decoration: none !important;">EarthFirst</h2>
+        </div>
+        
+        <form id="loginForm">
+            <div class="form-group-custom mb-4">
+                <label>E-mail</label>
+                <input type="email" class="form-control" placeholder="seu-email@exemplo.com" required>
+            </div>
+            
+            <div class="form-group-custom mb-5">
+                <label>Senha</label>
+                <input type="password" class="form-control" placeholder="Sua senha" required>
+            </div>
+            
+            <button type="submit" id="Conectar" class="w-100 mt-2">Entrar</button>
+        </form>
+        
+        <div class="text-center mt-5">
+            <p class="fs-4 mb-3 text-secondary">Não tem uma conta? <a href="cadastro.html" class="text-decoration-none fw-bold" style="color: rgb(46, 139, 87);">Crie uma aqui</a></p>
+            <a href="index.html" class="text-decoration-none text-muted fs-5">Voltar para o início</a>
+        </div>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/scripts/login.js"></script>
+</body>
+</html>

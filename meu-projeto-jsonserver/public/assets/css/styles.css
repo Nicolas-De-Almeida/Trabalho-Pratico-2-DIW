@@ -142,7 +142,7 @@ body #menu-layout-novo {
 }
 
 body #comeco {
-    background: linear-gradient(to right, rgba(0, 30, 40, 0.85), rgba(18, 201, 91, 0.4)), url("img/capa.jpg") center / cover no-repeat;
+    background: linear-gradient(to right, rgba(0, 30, 40, 0.85), rgba(18, 201, 91, 0.4)), url("/assets/img/capa.jpg") center / cover no-repeat;
     min-height: 850px;
     height: 100vh;
     color: rgb(255, 255, 255);
