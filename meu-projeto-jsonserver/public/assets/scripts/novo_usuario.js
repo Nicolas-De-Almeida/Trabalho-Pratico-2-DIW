@@ -1,57 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const usuarioLogado = localStorage.getItem("usuarioLogado");
-    let usuario = null;
+    const form = document.getElementById("cadastroForm");
 
-    if (usuarioLogado) {
-        usuario = JSON.parse(usuarioLogado);
-    }
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-    const isDashboard = window.location.pathname.includes("dashboard.html");
-    const isCadastroItens = window.location.pathname.includes("cadastro_itens.html");
+        const nome = form.querySelector('input[type="text"]').value.trim();
+        const email = form.querySelector('input[type="email"]').value.trim();
+        const senhas = form.querySelectorAll('input[type="password"]');
+        const senha = senhas[0].value;
+        const confirmar = senhas[1].value;
 
-    if (isDashboard && !usuarioLogado) {
-        window.location.href = "login.html";
-        return;
-    }
-
-    if (isCadastroItens && (!usuarioLogado || !usuario.admin)) {
-        window.location.href = "index.html";
-        return;
-    }
-
-    const menu = document.getElementById("menu-layout-novo");
-
-    if (menu) {
-        const linksExistentes = Array.from(menu.getElementsByTagName("a"));
-        linksExistentes.forEach(link => {
-            const texto = link.textContent.trim();
-            if (texto === "Dashboard" || texto === "Login" || texto === "Sair" || texto === "Cadastro Admin") {
-                link.remove();
-            }
-        });
-
-        if (usuarioLogado) {
-            if (usuario.admin === true) {
-                menu.insertAdjacentHTML("beforeend", `
-                    <a href="cadastro_itens.html" class="py-2 text-decoration-none fs-5 nav-item-custom fw-bold" style="color: rgb(46, 139, 87);">Cadastro Admin</a>
-                `);
-            }
-
-            menu.insertAdjacentHTML("beforeend", `
-                <a href="dashboard.html" class="text-black py-2 text-decoration-none fs-5 nav-item-custom">Dashboard</a>
-                <a href="#" id="btn-sair" class="text-danger py-2 text-decoration-none fs-5 nav-item-custom fw-bold">Sair</a>
-            `);
-
-            document.getElementById("btn-sair").addEventListener("click", (e) => {
-                e.preventDefault();
-                localStorage.removeItem("usuarioLogado");
-                window.location.reload(); 
-            });
-            
-        } else {
-            menu.insertAdjacentHTML("beforeend", `
-                <a href="login.html" class="text-black py-2 text-decoration-none fs-5 nav-item-custom fw-bold">Login</a>
-            `);
+        if (senha !== confirmar) {
+            alert("As senhas não coincidem!");
+            return;
         }
-    }
+
+        try {
+            const response = await fetch("http://localhost:3000/usuarios");
+            const usuarios = await response.json();
+
+            if (usuarios.find(u => u.email === email)) {
+                alert("Este e-mail já está cadastrado!");
+                return;
+            }
+
+            await fetch("http://localhost:3000/usuarios", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    id: Date.now().toString(),
+                    nome: nome,
+                    email: email,
+                    senha: senha,
+                    admin: false
+                })
+            });
+
+            alert("Conta criada com sucesso! Faça login.");
+            window.location.href = "login.html";
+        } catch (error) {
+            alert("Erro ao criar conta. Tente novamente.");
+        }
+    });
 });

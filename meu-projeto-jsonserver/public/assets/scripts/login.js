@@ -13,7 +13,7 @@ formLogin.addEventListener("submit", async (e) => {
         const usuarioValido = usuarios.find(user => user.email === email && user.senha === senha);
 
         if (usuarioValido) {
-            localStorage.setItem("usuarioLogado", JSON.stringify({
+            sessionStorage.setItem("usuarioLogado", JSON.stringify({
                 id: usuarioValido.id,
                 email: usuarioValido.email,
                 admin: usuarioValido.admin === true

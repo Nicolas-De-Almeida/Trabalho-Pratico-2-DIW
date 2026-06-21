@@ -8,72 +8,179 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body style="background: rgb(248, 249, 250);">
+<body>
 
-<header id="Header" class="sticky-top">
+<header id="Header" class="sticky-top bg-white border-bottom shadow-sm">
     <div class="container-fluid" id="topo">
-        <a href="index.html" id="logo-link">
-            <img src="assets/img/logo.png" alt="Logo EarthFirst" id="logo-img">
-            <span id="logo-texto">EarthFirst</span>
-        </a>
-        <nav id="navegacao">
-            <div id="menu-layout-novo"></div>
+        <nav class="navbar py-2">
+            <button class="navbar-toggler border-0 shadow-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" aria-controls="menuLateral">
+                <i class="fa-solid fa-bars fs-2" style="color: rgb(46, 139, 87);"></i>
+            </button>
+            <a href="index.html" class="navbar-brand d-flex align-items-center me-auto" id="logo-link">
+                <img src="assets/img/logo.png" alt="Logo EarthFirst" id="logo-img" style="height: 40px; margin-right: 10px;">
+                <span id="logo-texto" class="fw-bold fs-4 text-dark">EarthFirst</span>
+            </a>
         </nav>
     </div>
 </header>
 
-<main class="container py-5">
-    <div class="bg-white p-5 shadow-sm rounded-4 border">
-        <h2 class="text-center text-dark mb-5 text-decoration-none" style="font-size: 40px; font-weight: bold;">Cadastro de Projetos (CRUD)</h2>
-        
+<div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
+    <div class="d-flex align-items-center p-3 border-bottom">
+        <img src="assets/img/logo.png" alt="EarthFirst Logo" id="menu-logo-img">
+        <span id="menu-logo-text">EarthFirst</span>
+    </div>
+    <div class="offcanvas-body p-0">
+        <div class="d-flex flex-column align-items-start w-100" id="menu-layout-novo">
+            <a href="index.html" class="text-black py-3 px-4 text-decoration-none fs-5 nav-item-custom w-100 border-bottom">Início</a>
+            <a href="index.html#Cadastro_ONG" class="text-black py-3 px-4 text-decoration-none fs-5 nav-item-custom w-100 border-bottom">Junte-se a Nós</a>
+            <a href="index.html#Entre_em_Contato" class="text-black py-3 px-4 text-decoration-none fs-5 nav-item-custom w-100 border-bottom">Entre em Contato</a>
+            <a href="dashboard.html" class="text-black py-3 px-4 text-decoration-none fs-5 nav-item-custom w-100 border-bottom">Dashboard</a>
+        </div>
+    </div>
+</div>
+
+<main class="container-fluid px-3 px-lg-5">
+    <div id="crud-wrapper">
+        <h2>Cadastro de Projetos</h2>
+
         <form id="crudForm">
             <div class="row mb-4">
-                <div class="col-md-3">
-                    <label class="fw-bold mb-2 text-dark fs-5">Id</label>
-                    <input type="text" id="inputId" class="form-control form-control-lg bg-light" placeholder="ID automático" readonly>
+                <div class="col-md-2">
+                    <label class="form-label-custom">ID</label>
+                    <input type="text" id="inputId" class="form-input-custom" placeholder="Auto" readonly>
                 </div>
-                <div class="col-md-9">
-                    <label class="fw-bold mb-2 text-dark fs-5">Título (*)</label>
-                    <input type="text" id="inputTitulo" class="form-control form-control-lg" placeholder="Informe o título do projeto" required>
+                <div class="col-md-10">
+                    <label class="form-label-custom">Título (*)</label>
+                    <input type="text" id="inputTitulo" class="form-input-custom" placeholder="Informe o título do projeto" required>
                 </div>
             </div>
 
             <div class="row mb-4">
                 <div class="col-md-6">
-                    <label class="fw-bold mb-2 text-dark fs-5">Categoria (*)</label>
-                    <input type="text" id="inputCategoria" class="form-control form-control-lg" placeholder="Informe a categoria" required>
+                    <label class="form-label-custom">Categoria (*)</label>
+                    <input type="text" id="inputCategoria" class="form-input-custom" placeholder="Ex: Reflorestamento, Reciclagem, Educação, Conservação" required>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label-custom">Voluntários</label>
+                    <input type="text" id="inputVoluntarios" class="form-input-custom" placeholder="Ex: 250 pessoas">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label-custom">Ano de Início</label>
+                    <input type="text" id="inputAnoInicio" class="form-input-custom" placeholder="Ex: 2023">
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label class="form-label-custom">Região</label>
+                    <input type="text" id="inputRegiao" class="form-input-custom" placeholder="Ex: Floresta Amazônica">
                 </div>
                 <div class="col-md-6">
-                    <label class="fw-bold mb-2 text-dark fs-5">Voluntários</label>
-                    <input type="number" id="inputVoluntarios" class="form-control form-control-lg" placeholder="Qtd. Voluntários">
+                    <label class="form-label-custom">Impacto CO2</label>
+                    <input type="text" id="inputImpacto" class="form-input-custom" placeholder="Ex: 15 toneladas retidas/ano">
                 </div>
             </div>
 
             <div class="row mb-4">
                 <div class="col-12">
-                    <label class="fw-bold mb-2 text-dark fs-5">URL da Imagem</label>
-                    <input type="text" id="inputImagem" class="form-control form-control-lg" placeholder="Link da imagem da capa">
+                    <label class="form-label-custom">Descrição Curta (*)</label>
+                    <input type="text" id="inputDescricao" class="form-input-custom" placeholder="Breve descrição do projeto" required>
                 </div>
             </div>
 
-            <p class="text-muted fs-6 mb-4">(*) Campos obrigatórios</p>
+            <div class="row mb-4">
+                <div class="col-12">
+                    <label class="form-label-custom">Descrição Completa</label>
+                    <textarea id="inputConteudo" class="form-input-custom" rows="4" style="resize: vertical;" placeholder="Descrição detalhada do projeto"></textarea>
+                </div>
+            </div>
 
-            <div class="d-flex flex-wrap gap-2 mb-5">
-                <button type="button" id="btnInserir" class="btn btn-success px-4 py-2 fs-5 fw-bold text-white border-0" style="border-radius: 8px; background-color: #28a745;">Inserir</button>
-                <button type="button" id="btnAlterar" class="btn btn-warning px-4 py-2 fs-5 fw-bold text-dark border-0" style="border-radius: 8px; background-color: #ffc107;">Alterar</button>
-                <button type="button" id="btnExcluir" class="btn btn-danger px-4 py-2 fs-5 fw-bold text-white border-0" style="border-radius: 8px; background-color: #dc3545;">Excluir</button>
-                <button type="button" id="btnLimpar" class="btn btn-secondary px-4 py-2 fs-5 fw-bold text-white border-0" style="border-radius: 8px; background-color: #6c757d;">Limpar Form</button>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label class="form-label-custom">URL da Imagem</label>
+                    <input type="text" id="inputImagem" class="form-input-custom" placeholder="assets/img/nome.jpg">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label-custom">URL da Imagem Carrossel</label>
+                    <input type="text" id="inputImagemCarrossel" class="form-input-custom" placeholder="assets/img/nome.jpg">
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-9">
+                    <label class="form-label-custom">Tags (separadas por vírgula)</label>
+                    <input type="text" id="inputTags" class="form-input-custom" placeholder="Ex: Flora, Preservação, Bioma">
+                </div>
+                <div class="col-md-3 d-flex align-items-center gap-2 mt-4 pt-2">
+                    <input type="checkbox" id="inputDestaque" style="width: 20px; height: 20px; accent-color: rgb(46, 139, 87);">
+                    <label class="form-label-custom mb-0" for="inputDestaque">Exibir no Destaque</label>
+                </div>
+            </div>
+
+            <h5 class="fw-bold mb-3" style="color: rgb(46, 139, 87);">Frentes de Trabalho (Metas)</h5>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label-custom">Meta 1 - Título</label>
+                    <input type="text" id="inputMeta1Titulo" class="form-input-custom" placeholder="Título da meta 1">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label-custom">Meta 1 - Imagem</label>
+                    <input type="text" id="inputMeta1Imagem" class="form-input-custom" placeholder="assets/img/nome.jpg">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label-custom">Meta 2 - Título</label>
+                    <input type="text" id="inputMeta2Titulo" class="form-input-custom" placeholder="Título da meta 2">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label-custom">Meta 2 - Imagem</label>
+                    <input type="text" id="inputMeta2Imagem" class="form-input-custom" placeholder="assets/img/nome.jpg">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label-custom">Meta 3 - Título</label>
+                    <input type="text" id="inputMeta3Titulo" class="form-input-custom" placeholder="Título da meta 3">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label-custom">Meta 3 - Imagem</label>
+                    <input type="text" id="inputMeta3Imagem" class="form-input-custom" placeholder="assets/img/nome.jpg">
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label class="form-label-custom">Meta 4 - Título</label>
+                    <input type="text" id="inputMeta4Titulo" class="form-input-custom" placeholder="Título da meta 4">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label-custom">Meta 4 - Imagem</label>
+                    <input type="text" id="inputMeta4Imagem" class="form-input-custom" placeholder="assets/img/nome.jpg">
+                </div>
+            </div>
+
+            <p class="text-muted fs-5 mb-0">(*) Campos obrigatórios</p>
+
+            <div class="botoes-grid">
+                <button type="button" id="btnInserir" class="btn-acao btn-inserir">Inserir</button>
+                <button type="button" id="btnAlterar" class="btn-acao btn-alterar">Alterar</button>
+                <button type="button" id="btnExcluir" class="btn-acao btn-excluir">Excluir</button>
+                <button type="button" id="btnLimpar" class="btn-acao btn-limpar">Limpar Form</button>
             </div>
         </form>
 
-        <div class="table-responsive">
-            <table class="table table-hover border align-middle text-center fs-5">
-                <thead class="table-light">
+        <div class="tabela-container table-responsive">
+            <table class="table table-custom align-middle">
+                <thead>
                     <tr>
-                        <th class="py-3">#</th>
-                        <th class="py-3 text-start">Título</th>
-                        <th class="py-3">Categoria</th>
-                        <th class="py-3">Voluntários</th>
+                        <th class="text-center">#</th>
+                        <th class="text-start">Título</th>
+                        <th>Categoria</th>
+                        <th>Região</th>
                     </tr>
                 </thead>
                 <tbody id="tabelaItens"></tbody>
@@ -82,6 +189,12 @@
     </div>
 </main>
 
+<footer class="text-center p-4 mt-5">
+    <p class="text-white mb-0">Desenvolvido por: <strong>Nícolas De Almeida</strong></p>
+    <p class="text-white-50 small">Trabalho Prático 2-DIW</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/scripts/cadastro_itens.js"></script>
 <script src="assets/scripts/usuario_logado.js"></script>
 

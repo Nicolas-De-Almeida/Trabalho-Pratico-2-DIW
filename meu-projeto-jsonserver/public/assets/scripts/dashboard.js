@@ -24,7 +24,7 @@ function renderizarGraficoCategorias(projetos) {
             labels: Object.keys(categorias),
             datasets: [{
                 data: Object.values(categorias),
-                backgroundColor: ["#198754", "#20c997", "#28a745", "#a3cfbb", "#146c43"]
+                backgroundColor: ["rgb(25, 135, 84)", "rgb(32, 201, 151)", "rgb(40, 167, 69)", "rgb(163, 207, 187)", "rgb(20, 108, 67)"]
             }]
         },
         options: {
@@ -49,7 +49,7 @@ function renderizarGraficoVoluntarios(projetos) {
             datasets: [{
                 label: "Quantidade de Voluntários",
                 data: dados,
-                backgroundColor: "#28a745",
+                backgroundColor: "rgb(40, 167, 69)",
                 borderRadius: 6
             }]
         },

@@ -501,7 +501,6 @@
       "email": "programador@gmail.com",
       "senha": "123",
       "admin": true
-      
     },
     {
       "id": "MZ3EVv1b6OI",
@@ -509,6 +508,27 @@
       "email": "segundo_usuario@gmail.com",
       "senha": "123",
       "admin": false
+    },
+    {
+      "id": "4VM3rnM8K3k",
+      "nome": "shaki",
+      "email": "shaki@gmail.com",
+      "senha": "123",
+      "admin": false
+    },
+    {
+      "id": "WHyfAQPjCH0",
+      "nome": "idkidkdik",
+      "email": "idkidkidk@gmial.com",
+      "senha": "123",
+      "admin": false
+    }
+  ],
+  "favoritos": [
+    {
+      "id": "rgsA8hpvM5k",
+      "usuarioId": "1",
+      "projetoId": "4"
     }
   ],
   "comentarios": [
