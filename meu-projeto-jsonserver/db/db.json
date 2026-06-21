@@ -524,13 +524,7 @@
       "admin": false
     }
   ],
-  "favoritos": [
-    {
-      "id": "rgsA8hpvM5k",
-      "usuarioId": "1",
-      "projetoId": "4"
-    }
-  ],
+  "favoritos": [],
   "comentarios": [
     {
       "id": "1",
