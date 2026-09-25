@@ -9,6 +9,18 @@
 
 ---
 
+## Como executar localmente
+
+Na pasta `meu-projeto-jsonserver`, execute:
+
+```bash
+npm start
+```
+
+Depois, acesse `http://localhost:3000/`
+
+---
+
 ## Proposta do Projeto 
 - **Tema:** Uma grande ONG focada no meio ambiente.
 - **Breve descrição:** O objetivo é criar um site informativo e educativo sobre o meio ambiente. A ideia é oferecer um ambiente onde as pessoas possam saber mais sobre as ONGs existentes, e onde as próprias instituições possam entrar em contato e se juntar para realizar mais trabalhos em conjunto.
